@@ -3,9 +3,10 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
-import { GameQuery } from "../App";
+import { GameQuery } from "../pages/HomePage";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   gameQuery: GameQuery;
@@ -20,6 +21,9 @@ function GameGrid({ gameQuery }: Props) {
 
   const fetchedGamesCount =
     data?.pages.reduce((total, page) => total + page.results.length, 0) || 0;
+
+  // const navigate = useNavigate();
+
   return (
     <InfiniteScroll
       dataLength={fetchedGamesCount}
