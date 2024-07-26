@@ -2,12 +2,16 @@ import { Heading, Text, Box } from "@chakra-ui/react";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 import Navbar from "../components/Navbar";
 
-const ErrorPage = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const ErrorPage = ({ onSearch }: Props) => {
   const error = useRouteError();
 
   return (
     <>
-      <Navbar />
+      <Navbar onSearch={onSearch} />
       <Box padding={5}>
         <Heading>Oops</Heading>
         <Text>

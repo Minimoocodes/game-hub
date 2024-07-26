@@ -6,7 +6,6 @@ import GameCardContainer from "./GameCardContainer";
 import { GameQuery } from "../pages/HomePage";
 import React from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useNavigate } from "react-router-dom";
 
 interface Props {
   gameQuery: GameQuery;
